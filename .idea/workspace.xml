@@ -104,13 +104,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBAdapter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DBAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/BrownEPoints/DBAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="0" selection-start="6160" selection-end="6160" vertical-scroll-proportion="0.44992948" vertical-offset="1916" max-vertical-offset="2625">
+            <state line="147" column="66" selection-start="6149" selection-end="6149" vertical-scroll-proportion="0.0" vertical-offset="1916" max-vertical-offset="2625">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="-0.56482863" vertical-offset="439" max-vertical-offset="1110">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -618,16 +627,16 @@
       <changelist id="c95195fc-a79d-43b9-b369-4c181d0c846c" name="Default" comment="" />
       <created>1394924704693</created>
       <updated>1394924704693</updated>
-      <workItem from="1394924709478" duration="11326000" />
+      <workItem from="1394924709478" duration="11562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11326000" />
+    <option name="totallyTimeSpent" value="11562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -640,7 +649,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -681,13 +690,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/new_user_screen.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -768,10 +770,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BrownEPoints/DBAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="0" selection-start="6160" selection-end="6160" vertical-scroll-proportion="0.44992948" vertical-offset="1916" max-vertical-offset="2625">
+        <state line="147" column="66" selection-start="6149" selection-end="6149" vertical-scroll-proportion="0.0" vertical-offset="1916" max-vertical-offset="2625">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="-0.56482863" vertical-offset="439" max-vertical-offset="1110">
+          <folding />
         </state>
       </provider>
     </entry>
