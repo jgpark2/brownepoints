@@ -33,6 +33,7 @@ public class DBAdapter {
 */
     //Attributes for User
     public static final String KEY_EMAIL = "Email";
+    public static final String KEY_PASSWORD = "Password";
     public static final String KEY_USERNAME = "Username";
     public static final String KEY_CREDIBILITY = "Credibility";
     public static final String KEY_POINTS = "Points";
@@ -81,6 +82,7 @@ public class DBAdapter {
             "create table " + USER_TABLE
                     + " create table if not exists assignments ("
                     + KEY_EMAIL + "text not null " + "PRIMARY KEY, "
+                    + KEY_PASSWORD + "text not null,"
                     + KEY_USERNAME + "text not null, "
                     + KEY_CREDIBILITY + "integer not null, "
                     + KEY_POINTS + "integer not null, "
@@ -144,7 +146,8 @@ public class DBAdapter {
         DBHelper = new DatabaseHelper(context);
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
     private class DatabaseHelper extends SQLiteOpenHelper
     {
 
@@ -182,7 +185,8 @@ public class DBAdapter {
         DBHelper.close();
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 /*
 --------------------------------------------------------------------------------------------
                             USER TABLE QUERY FUNCTIONS
@@ -190,12 +194,13 @@ public class DBAdapter {
 */
 
 
-    public long insertUser(String Email, String Username, String Credibility,
+    public long insertUser(String Email,  String Password, String Username, String Credibility,
                            String Points, String Ethnicity, String Age, String Country,
                            String State, String Gender)
     {
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_EMAIL, Email);
+        initialValues.put(KEY_PASSWORD, Password);
         initialValues.put(KEY_USERNAME, Username);
         initialValues.put(KEY_CREDIBILITY, Credibility);
         initialValues.put(KEY_POINTS, Points);
@@ -228,12 +233,20 @@ public class DBAdapter {
 
     }
 
-    public boolean updateUser(String Email, String Username, String Credibility,
+    public boolean isUser(String Email)
+    {
+        if(getUser(Email) != null)
+            return true;
+        return false;
+    }
+
+    public boolean updateUser(String Email, String Password, String Username, String Credibility,
                               String Points, String Ethnicity, String Age, String Country,
                               String State, String Gender)
     {
         ContentValues newValues = new ContentValues();
         newValues.put(KEY_EMAIL, Email);
+        newValues.put(KEY_PASSWORD, Password);
         newValues.put(KEY_USERNAME, Username);
         newValues.put(KEY_CREDIBILITY, Credibility);
         newValues.put(KEY_POINTS, Points);
