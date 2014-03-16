@@ -1,10 +1,13 @@
 package com.example.BrownEPoints;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBAdapter {
+
 
     private static final String TAG = "DBAdapter";
 
@@ -13,6 +16,8 @@ public class DBAdapter {
 
     public static final String DATABASE_NAME = "Database";
 
+    public static final String KEY_ROWID = "_id";
+    public static final int COL_ROWID = 0;
 
     //Table names
     public static final String USER_TABLE = "UserTable";
@@ -37,16 +42,6 @@ public class DBAdapter {
     public static final String KEY_STATE = "State";
     public static final String KEY_GENDER = "Gender";
 
-//    //Column Numbers
-//    public static final int COL_EMAIL = 1;
-//    public static final int COL_USERNAME = 2;
-//    public static final int COL_CREDIBILITY = 3;
-//    public static final int COL_POINTS = 4;
-//    public static final int COL_ETHNICITY = 5;
-//    public static final int COL_AGE = 6;
-//    public static final int COL_COUNTRY = 7;
-//    public static final int COL_STATE = 8;
-//    public static final int COL_GENDER = 9;
 
     //Attributes for Company
     public static final String KEY_COMPANYID = "CompanyID";
@@ -84,7 +79,7 @@ public class DBAdapter {
     //SQL to create the User table
     private static final String CREATE_TABLE_USER =
             "create table " + USER_TABLE
-                    + " ("
+                    + " create table if not exists assignments ("
                     + KEY_EMAIL + "text not null " + "PRIMARY KEY, "
                     + KEY_USERNAME + "text not null, "
                     + KEY_CREDIBILITY + "integer not null, "
@@ -99,7 +94,7 @@ public class DBAdapter {
     //SQL to create the Company table
     private static final String CREATE_TABLE_COMPANY =
             "create table " + COMPANY_TABLE
-                    + " ("
+                    + " create table if not exists assignments ("
                     + KEY_COMPANYID + "integer not null " + "PRIMARY KEY, "
                     + KEY_COMPANYNAME + "text not null, "
                     + KEY_ADDRESS + "text not null, "
@@ -109,9 +104,9 @@ public class DBAdapter {
     //SQL to create the Ad table
     private static final String CREATE_TABLE_AD =
             "create table " + AD_TABLE
-                    + " ("
+                    + " create table if not exists assignments ("
                     + KEY_ADID + "integer not null " + "PRIMARY KEY, "
-                    + KEY_COMPANYID + "integer not null, "
+                    + KEY_COMPANYID + "integer not null " + "FOREIGN KEY REFERENCES " + COMPANY_TABLE + "(" + KEY_COMPANYID + "), "
                     + KEY_POINTVALUE + "integer not null, "
                     + KEY_TYPE + "text not null, "
                     + KEY_DATEUPLOADED + "datetime not null"
@@ -120,7 +115,7 @@ public class DBAdapter {
     //SQL to create the Watches table
     private static final String CREATE_TABLE_WATCHES =
             "create table " + WATCHES_TABLE
-                    + " ("
+                    + " create table if not exists assignments ("
                     + KEY_ADID + "integer not null " + "FOREIGN KEY REFERENCES " + AD_TABLE + "(" + KEY_ADID + "), "
                     + KEY_EMAIL + "text not null " + "FOREIGN KEY REFERENCES " + USER_TABLE + "(" + KEY_EMAIL + "), "
                     + KEY_DATEWATCHED + "datetime not null, "
@@ -130,7 +125,7 @@ public class DBAdapter {
     //SQL to create the Rates table
     private static final String CREATE_TABLE_RATES =
             "create table " + RATES_TABLE
-                    + " ("
+                    + " create table if not exists assignments ("
                     + KEY_COMPANYID + "integer not null " + "FOREIGN KEY REFERENCES " + COMPANY_TABLE + "(" + KEY_COMPANYID + "), "
                     + KEY_EMAIL + "text not null " + "FOREIGN KEY REFERENCES " + USER_TABLE + "(" + KEY_EMAIL + "), "
                     + KEY_DATERATED + "datetime not null, "
@@ -138,8 +133,19 @@ public class DBAdapter {
                     + ");";
 
 
+    private final Context context;
+    private DatabaseHelper DBHelper;
+    private SQLiteDatabase db;
 
-    private static class DatabaseHelper extends SQLiteOpenHelper
+
+    public DBAdapter(Context context)
+    {
+        this.context = context;
+        DBHelper = new DatabaseHelper(context);
+    }
+
+
+    private class DatabaseHelper extends SQLiteOpenHelper
     {
 
 
@@ -151,10 +157,10 @@ public class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(CREATE_TABLE_USER);
-            db.execSQL(CREATE_TABLE_WATCHES);
-            db.execSQL(CREATE_TABLE_AD);
-            db.execSQL(CREATE_TABLE_COMPANY);
-            db.execSQL(CREATE_TABLE_RATES);
+//            db.execSQL(CREATE_TABLE_WATCHES);
+//            db.execSQL(CREATE_TABLE_AD);
+//            db.execSQL(CREATE_TABLE_COMPANY);
+//            db.execSQL(CREATE_TABLE_RATES);
 
         }
 
@@ -165,5 +171,106 @@ public class DBAdapter {
     }
 
 
+    // Open the database connection.
+    public DBAdapter open() {
+        db = DBHelper.getWritableDatabase();
+        return this;
+    }
+
+    // Close the database connection.
+    public void close() {
+        DBHelper.close();
+    }
+
+
+/*
+--------------------------------------------------------------------------------------------
+                            USER TABLE QUERY FUNCTIONS
+--------------------------------------------------------------------------------------------
+*/
+
+
+    public long insertUser(String Email, String Username, String Credibility,
+                           String Points, String Ethnicity, String Age, String Country,
+                           String State, String Gender)
+    {
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_EMAIL, Email);
+        initialValues.put(KEY_USERNAME, Username);
+        initialValues.put(KEY_CREDIBILITY, Credibility);
+        initialValues.put(KEY_POINTS, Points);
+        initialValues.put(KEY_ETHNICITY, Ethnicity);
+        initialValues.put(KEY_AGE, Age);
+        initialValues.put(KEY_COUNTRY, Country);
+        initialValues.put(KEY_STATE, State);
+        initialValues.put(KEY_GENDER, Gender);
+
+        return db.insert(USER_TABLE, null, initialValues);
+
+    }
+
+
+    public boolean deleteUser(String Email)
+    {
+        return db.delete(USER_TABLE, KEY_EMAIL + "=" + Email, null) > 0;
+    }
+
+    public Cursor getUser(String Email)
+    {
+        Cursor qCursor =
+                db.query(true, USER_TABLE, new String[] {KEY_EMAIL, KEY_USERNAME, KEY_CREDIBILITY, KEY_POINTS,
+                KEY_ETHNICITY, KEY_AGE, KEY_COUNTRY, KEY_STATE, KEY_GENDER}, KEY_EMAIL + "=" + Email, null, null, null, null, null);
+
+        if (qCursor != null) {
+            qCursor.moveToFirst();
+        }
+        return qCursor;
+
+    }
+
+    public boolean updateUser(String Email, String Username, String Credibility,
+                              String Points, String Ethnicity, String Age, String Country,
+                              String State, String Gender)
+    {
+        ContentValues newValues = new ContentValues();
+        newValues.put(KEY_EMAIL, Email);
+        newValues.put(KEY_USERNAME, Username);
+        newValues.put(KEY_CREDIBILITY, Credibility);
+        newValues.put(KEY_POINTS, Points);
+        newValues.put(KEY_ETHNICITY, Ethnicity);
+        newValues.put(KEY_AGE, Age);
+        newValues.put(KEY_COUNTRY, Country);
+        newValues.put(KEY_STATE, State);
+        newValues.put(KEY_GENDER, Gender);
+        return db.update(USER_TABLE, newValues, KEY_EMAIL + "=" + Email, null) > 0;
+    }
+
+
+/*
+--------------------------------------------------------------------------------------------
+                            COMPANY TABLE QUERY FUNCTIONS
+--------------------------------------------------------------------------------------------
+*/
+
+
+/*
+--------------------------------------------------------------------------------------------
+                            AD TABLE QUERY FUNCTIONS
+--------------------------------------------------------------------------------------------
+*/
+
+
+/*
+--------------------------------------------------------------------------------------------
+                            WATCHES TABLE QUERY FUNCTIONS
+--------------------------------------------------------------------------------------------
+*/
+
+
+/*
+--------------------------------------------------------------------------------------------
+                            RATES TABLE QUERY FUNCTIONS
+--------------------------------------------------------------------------------------------
+*/
 
 }

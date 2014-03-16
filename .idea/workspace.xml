@@ -104,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBAdapter.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DBAdapter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/BrownEPoints/DBAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="66" selection-start="6149" selection-end="6149" vertical-scroll-proportion="0.0" vertical-offset="1916" max-vertical-offset="2625">
+            <state line="156" column="17" selection-start="6396" selection-end="6396" vertical-scroll-proportion="0.1480959" vertical-offset="2235" max-vertical-offset="4230">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="-0.56482863" vertical-offset="439" max-vertical-offset="1110">
+            <state line="4" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="15.16" vertical-offset="439" max-vertical-offset="1110">
               <folding />
             </state>
           </provider>
@@ -355,7 +355,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="SearchEverywhereHistory" value="d" />
+    <property name="SearchEverywhereHistory" value="&#10;d" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -627,12 +627,12 @@
       <changelist id="c95195fc-a79d-43b9-b369-4c181d0c846c" name="Default" comment="" />
       <created>1394924704693</created>
       <updated>1394924704693</updated>
-      <workItem from="1394924709478" duration="11562000" />
+      <workItem from="1394924709478" duration="16927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11562000" />
+    <option name="totallyTimeSpent" value="16927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="6" />
@@ -710,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/user_info.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="48" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
@@ -727,16 +717,6 @@
             <element signature="e#298#316#0" expanded="true" />
             <element signature="e#436#454#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="66" column="37" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="1215">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,19 +748,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/BrownEPoints/DBAdapter.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="66" selection-start="6149" selection-end="6149" vertical-scroll-proportion="0.0" vertical-offset="1916" max-vertical-offset="2625">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="4" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="15.16" vertical-offset="439" max-vertical-offset="1110">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="-0.56482863" vertical-offset="439" max-vertical-offset="1110">
+    <entry file="file://$PROJECT_DIR$/res/layout/user_info.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="66" column="37" selection-start="3408" selection-end="3408" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/BrownEPoints/DBAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="17" selection-start="6396" selection-end="6396" vertical-scroll-proportion="0.1480959" vertical-offset="2235" max-vertical-offset="4230">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
