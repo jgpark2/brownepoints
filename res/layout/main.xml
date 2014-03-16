@@ -4,7 +4,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="#ffffff">
+        android:background="#ffffff" android:id="@id/background_frame">
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,7 +65,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submit"
-                android:id="@+id/button2" android:layout_below="@+id/textView3"
-                android:layout_alignStart="@+id/editText2"/>
+                android:id="@+id/button2"
+                android:layout_below="@+id/textView3" android:layout_alignStart="@+id/editText2"
+                android:layout_marginTop="28dp" android:layout_alignEnd="@+id/button"
+
+                android:onClick="user_homepage_button"
+                />
+
     </RelativeLayout>
 </LinearLayout>
