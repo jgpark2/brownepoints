@@ -69,7 +69,7 @@
                 android:layout_below="@+id/textView3" android:layout_alignStart="@id/password_input"
                 android:layout_marginTop="28dp" android:layout_alignEnd="@+id/button"
 
-                android:onClick="user_homepage_button"
+                android:onClick="login_button"
                 android:clickable="true"/>
         <Button
                 style="?android:attr/buttonStyleSmall"

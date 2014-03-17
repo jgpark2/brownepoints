@@ -84,19 +84,19 @@ public class DBAdapter {
 
 
     //SQL to create the User table
-    private static final String CREATE_TABLE_USER =
-            "create table " + USER_TABLE
+    public static final String CREATE_TABLE_USER =
+            "CREATE TABLE " + USER_TABLE
                     + "("
-                    + KEY_EMAIL + "text not null " + "PRIMARY KEY, "
-                    + KEY_PASSWORD + "text not null,"
-                    + KEY_USERNAME + "text not null, "
-                    + KEY_CREDIBILITY + "integer not null, "
-                    + KEY_POINTS + "integer not null, "
-                    + KEY_ETHNICITY + "text not null, "
-                    + KEY_AGE + "integer not null, "
-                    + KEY_COUNTRY + "text not null, "
-                    + KEY_STATE + "text not null, "
-                    + KEY_GENDER + "text not null "
+                    + KEY_EMAIL + " VARCHAR(50) PRIMARY KEY NOT NULL, "
+                    + KEY_PASSWORD + " VARCHAR(50) NOT NULL, "
+                    + KEY_USERNAME + " VARCHAR(50) NOT NULL, "
+                    + KEY_CREDIBILITY + " INT NOT NULL, "
+                    + KEY_POINTS + " INT NOT NULL, "
+                    + KEY_ETHNICITY + " VARCHAR(50) NOT NULL, "
+                    + KEY_AGE + " INT NOT NULL, "
+                    + KEY_COUNTRY + " VARCHAR(50) NOT NULL, "
+                    + KEY_STATE + " VARCHAR(50) NOT NULL, "
+                    + KEY_GENDER + " VARCHAR(50) NOT NULL"
                     + ");";
 
     //SQL to create the Company table
@@ -230,8 +230,8 @@ private static class DatabaseHelper extends SQLiteOpenHelper
 */
 
 
-    public long insertUser(String Email,  String Password, String Username, String Credibility,
-                           String Points, String Ethnicity, String Age, String Country,
+    public long insertUser(String Email,  String Password, String Username, int Credibility,
+                           int Points, String Ethnicity, int Age, String Country,
                            String State, String Gender)
     {
         ContentValues initialValues = new ContentValues();
@@ -247,7 +247,7 @@ private static class DatabaseHelper extends SQLiteOpenHelper
         initialValues.put(KEY_GENDER, Gender);
 
 
-        System.out.println(db.getPath());
+        System.out.println(db.getAttachedDbs());
         return db.insert(USER_TABLE, null, initialValues);
 
 
@@ -279,8 +279,8 @@ private static class DatabaseHelper extends SQLiteOpenHelper
         return false;
     }
 
-    public boolean updateUser(String Email, String Password, String Username, String Credibility,
-                              String Points, String Ethnicity, String Age, String Country,
+    public boolean updateUser(String Email, String Password, String Username, int Credibility,
+                              int Points, String Ethnicity, int Age, String Country,
                               String State, String Gender)
     {
         ContentValues newValues = new ContentValues();
