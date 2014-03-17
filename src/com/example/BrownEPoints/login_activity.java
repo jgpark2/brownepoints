@@ -5,16 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class login_activity extends Activity implements View.OnClickListener{
 
-    DBAdapter dbAdapter;
+    DBAdapter myDb;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
 
         openDB();
     }
@@ -26,12 +26,13 @@ public class login_activity extends Activity implements View.OnClickListener{
     }
 
     private void openDB() {
-        dbAdapter = new DBAdapter(this);
-        dbAdapter.open();
+        myDb = new DBAdapter(this);
+        myDb.open();
     }
     private void closeDB() {
-        dbAdapter.close();
+        myDb.close();
     }
+
 
 
 
@@ -64,7 +65,10 @@ public class login_activity extends Activity implements View.OnClickListener{
 
     public void add_user_button(View v){
 
-        dbAdapter.insertUser("holsten2", "pass", "grindlemire", "0", "0", "white", "10", "USA", "CO", "male");
+        myDb.insertUser("holsten2", "pass", "grindlemire", "0", "0", "white", "10", "USA", "CO", "male");
+        Toast.makeText(this, "Username = holsten2 and password = pass", Toast.LENGTH_SHORT).show();
+
+
 
     }
 
