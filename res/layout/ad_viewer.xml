@@ -9,40 +9,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="User Homepage"
+            android:text="Rate"
             android:id="@+id/textView" android:layout_gravity="center_horizontal" android:textColor="#000000"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+
+            android:visibility="gone"
+
+            />
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User Info"
+                android:text="Vote"
                 android:id="@+id/button"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="91dp"
 
-                android:onClick="user_info_button"
+                android:visibility="gone"
                 />
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start"
+                android:text="Survey"
                 android:id="@+id/button2"
                 android:layout_below="@+id/button"
                 android:layout_alignStart="@+id/button"
                 android:layout_marginTop="56dp"
-                android:layout_alignEnd="@+id/button" android:onClick="ad_viewer_button"/>
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Logout"
-                android:id="@+id/button3"
-                android:layout_below="@+id/button2"
-                android:layout_alignStart="@+id/button2"
-                android:layout_marginTop="72dp"
-                android:layout_alignEnd="@+id/button2" android:onClick="logout_button"/>
+                android:layout_alignEnd="@+id/button"
+
+                android:visibility="gone"
+                />
     </RelativeLayout>
 </LinearLayout>

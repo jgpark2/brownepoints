@@ -1,6 +1,7 @@
 package com.example.BrownEPoints;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -16,8 +17,11 @@ public class new_user_activity extends Activity {
 
     public void onClick(View v){}
 
-    public void new_user_button(View v){
+    public void create_new_user_button(View v){
 
-        Toast.makeText(new_user_activity.this, "New Account Created!", Toast.LENGTH_LONG).show();
+        Toast.makeText(new_user_activity.this, "New Account Created!", Toast.LENGTH_SHORT).show();
+
+        startActivity(new Intent(new_user_activity.this, user_homepage_activity.class));
     }
+
 }
