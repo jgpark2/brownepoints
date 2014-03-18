@@ -138,13 +138,13 @@
       <file leaf-file-name="login_activity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/BrownEPoints/login_activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="44" selection-start="2259" selection-end="2259" vertical-scroll-proportion="0.76724136" vertical-offset="680" max-vertical-offset="2325">
+            <state line="72" column="23" selection-start="1985" selection-end="1990" vertical-scroll-proportion="0.33544305" vertical-offset="868" max-vertical-offset="2430">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1859#2737#0" expanded="true" />
-                <element signature="e#2718#2719#0" expanded="true" />
-                <element signature="e#3488#3834#0" expanded="true" />
-                <element signature="e#3819#3820#0" expanded="true" />
+                <element signature="e#3064#3410#0" expanded="true" />
+                <element signature="e#3395#3396#0" expanded="true" />
+                <element signature="e#3962#3963#0" expanded="true" />
+                <element signature="e#3992#3993#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -648,12 +648,12 @@
       <changelist id="c95195fc-a79d-43b9-b369-4c181d0c846c" name="Default" comment="" />
       <created>1394924704693</created>
       <updated>1394924704693</updated>
-      <workItem from="1394924709478" duration="49772000" />
+      <workItem from="1394924709478" duration="54538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49772000" />
+    <option name="totallyTimeSpent" value="54538000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -700,7 +700,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3263158" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15263158" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.05" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -756,7 +756,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="7878" max-vertical-offset="14370">
           <folding>
-            <marker date="1395096451000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395101164000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -923,13 +923,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/BrownEPoints/login_activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="44" selection-start="2259" selection-end="2259" vertical-scroll-proportion="0.76724136" vertical-offset="680" max-vertical-offset="2325">
+        <state line="72" column="23" selection-start="1985" selection-end="1990" vertical-scroll-proportion="0.33544305" vertical-offset="868" max-vertical-offset="2430">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1859#2737#0" expanded="true" />
-            <element signature="e#2718#2719#0" expanded="true" />
-            <element signature="e#3488#3834#0" expanded="true" />
-            <element signature="e#3819#3820#0" expanded="true" />
+            <element signature="e#3064#3410#0" expanded="true" />
+            <element signature="e#3395#3396#0" expanded="true" />
+            <element signature="e#3962#3963#0" expanded="true" />
+            <element signature="e#3992#3993#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -58,37 +58,33 @@ public class login_activity extends Activity implements View.OnClickListener{
 
         if(!username_input.getText().toString().trim().equals("") && !password_input.getText().toString().trim().equals(""))
         {
+            String output="";
             String password = password_input.getText().toString();
             String username = username_input.getText().toString();
 
             final String sRequest = "http://web.engr.illinois.edu/~holsten2/get_user.php?username="+username+"&password="+password;
             final HttpClient client = new DefaultHttpClient();
-//            Log.w("hi", "GOT HERE");
-            try {
-                Thread t = (new Thread() {
-                    public void run() {
-                        try {
-                            Document d = Jsoup.connect(sRequest).get();
-                            Log.w("network", d.text());
-                            String response = d.text();
-//                            if(!response.equals(""))
-//                            {
-//                                startActivity(new Intent(login_activity.this, user_homepage_activity.class));
-//                            }
-//                            else
-//                            {
-//                                Toast.makeText(this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
-//                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
 
+            try {
+
+                check_login check = new check_login();
+                check.set_path(sRequest);
+                Thread t = new Thread(check);
                 t.start();
                 t.join();
+                output = check.return_reponse();
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+
+            if(!output.equals(""))
+            {
+                startActivity(new Intent(login_activity.this, user_homepage_activity.class));
+            }
+            else
+            {
+                Toast.makeText(this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
             }
 
 
@@ -132,18 +128,29 @@ public class login_activity extends Activity implements View.OnClickListener{
 
 }
 
+class check_login implements Runnable{
+    private volatile String response="";
+    private String request="";
 
-//
-//class URL_Response extends AsyncTask<String>
-//        {
-//
-//            @Override
-//            protected Object doInBackground(Object[] params) {
-//                try {
-//                    Document d = Jsoup.connect().get();
-//                    Log.w("network", d.outerHtml());
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
+    public void run() {
+        try {
+            Document d = Jsoup.connect(request).get();
+            Log.w("network", d.text());
+            response = d.text();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void set_path(String path)
+    {
+        request = path;
+    }
+
+    public String return_reponse()
+    {
+        return response;
+    }
+}
+
