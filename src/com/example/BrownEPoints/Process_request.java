@@ -22,6 +22,26 @@ public class Process_request implements Runnable{
         }
     }
 
+    public static String runProcess(String in_request)
+    {
+
+
+        try {
+
+            Process_request check_login = new Process_request();
+            check_login.set_path(in_request);
+            Thread t = new Thread(check_login);
+            t.start();
+            t.join();
+            return check_login.return_reponse();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+
     public void set_path(String path)
     {
         request = path;

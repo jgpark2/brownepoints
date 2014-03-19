@@ -58,7 +58,7 @@ public class new_user_activity extends Activity {
                 gender = "Male";
             else gender = "Female";
 
-            String sRequest = "http://web.engr.illinois.edu/~holsten2/insert_user.php?email="+email+"&username="+username+"&password="+password
+            String sRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/user_table/insert_user.php?email="+email+"&username="+username+"&password="+password
                    +"&age="+age+"&country="+country+"&state="+state+"&ethnicity="+ethnicity+"&gender="+gender;
 
             System.out.println(sRequest);
@@ -79,6 +79,7 @@ public class new_user_activity extends Activity {
             if(output.contains("queried successfully"))
             {
                 Toast.makeText(this, "New Account Created!", Toast.LENGTH_SHORT).show();
+                login_activity.set_user(username, password);
                 startActivity(new Intent(new_user_activity.this, user_homepage_activity.class));
             }
             else if(output.contains("Error inserting into database:"))

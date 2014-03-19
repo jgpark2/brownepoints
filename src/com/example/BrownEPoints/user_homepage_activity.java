@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-/**
- * Created by Joel Holsteen (netID holsten2 on 3/15/14.
- */
+
 public class user_homepage_activity extends Activity implements View.OnClickListener{
 
     /**
@@ -35,6 +33,7 @@ public class user_homepage_activity extends Activity implements View.OnClickList
 
     public void logout_button(View v){
 
+        login_activity.logout_user();
         startActivity(new Intent(user_homepage_activity.this, login_activity.class));
         Toast.makeText(this, "You have been logged out.", Toast.LENGTH_SHORT).show();
 
