@@ -1,2 +1,2 @@
 #Can ignore specific files
-workspace.xml
+.idea/workspace.xml
