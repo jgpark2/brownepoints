@@ -83,4 +83,18 @@ public class login_activity extends Activity implements View.OnClickListener{
             Toast.makeText(this, "Error logging in", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onBackPressed() {
+
+        if(identity[0].equals("") || identity[1].equals(""))
+            Toast.makeText(this, "Nice Try :D", Toast.LENGTH_SHORT).show();
+        else
+        {
+            super.onBackPressed();
+        }
+    }
+
+
 }
+
+//does this work

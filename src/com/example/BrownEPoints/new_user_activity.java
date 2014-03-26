@@ -92,10 +92,10 @@ public class new_user_activity extends Activity {
             }
 
         }
-
-
-
-//        Toast.makeText(new_user_activity.this, " Please enter all the information", Toast.LENGTH_SHORT).show();
+//        else
+//        {
+//          Toast.makeText(new_user_activity.this, " Please enter all the information", Toast.LENGTH_SHORT).show();
+//        }
     }
 
 }
