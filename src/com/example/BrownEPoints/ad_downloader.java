@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
-import javax.net.ssl.HttpsURLConnection;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -25,19 +24,13 @@ public class ad_downloader {
 
     public void run_image_downloader()
     {
-        ImageDownloader imageLoader = new ImageDownloader(image);
-        imageLoader.execute("http://static2.businessinsider.com/image/514b2c81eab8ea6956000002-534-793/star%20trek%20into%20darkness%20poster-1.png");
+
+        new ImageDownloader().execute("http://static2.businessinsider.com/image/514b2c81eab8ea6956000002-534-793/star%20trek%20into%20darkness%20poster-1.png");
     }
 
 
     public class ImageDownloader extends AsyncTask <String, Void, Bitmap>
     {
-
-        ImageView image;
-
-        public ImageDownloader(ImageView image) {
-            this.image = image;
-        }
 
         @Override
         protected Bitmap doInBackground(String... params) {
@@ -63,7 +56,7 @@ public class ad_downloader {
         try
         {
             URL imageURL = new URL(url);
-            HttpURLConnection connection = (HttpsURLConnection) imageURL.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) imageURL.openConnection();
             connection.setAllowUserInteraction(false);
             connection.setInstanceFollowRedirects(true);
             connection.setRequestMethod("GET");
