@@ -19,6 +19,7 @@ public class ad_viewer_activity extends Activity implements View.OnClickListener
         ad_downloader set_image = new ad_downloader(iv);
         set_image.run_image_downloader();
 
+           // does this work
     }
 
     @Override
