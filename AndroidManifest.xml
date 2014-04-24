@@ -13,10 +13,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".new_user_activity">
-        </activity>
-        <activity android:name=".user_homepage_activity">
-        </activity>
+        <activity android:name=".new_user_activity"/>
+        <activity android:name=".user_homepage_activity"/>
+        <activity android:name=".user_list_activity"/>
         <activity android:name=".user_info_activity"/>
         <activity android:name=".ad_viewer_activity"/>
         <activity android:name=".user_search_results_activity"/>

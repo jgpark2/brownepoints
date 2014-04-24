@@ -19,7 +19,8 @@ public class user_search_results_activity extends Activity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_search_results);
 
-        String search_word  = user_homepage_activity.get_search_result();
+        String search_word  = user_list_activity.get_selected_name();
+        //user_homepage_activity.get_search_result();
 
         TextView user_name = (TextView)findViewById(R.id.search_user_info_username);
         TextView user_age = (TextView)findViewById(R.id.search_user_info_age);
