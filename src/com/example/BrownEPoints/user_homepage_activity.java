@@ -40,9 +40,12 @@ public class user_homepage_activity extends Activity implements View.OnClickList
 
     public void ad_viewer_button(View v){
 
-        startActivity(new Intent(user_homepage_activity.this, ad_viewer_activity.class));
+        startActivity(new Intent(user_homepage_activity.this, ad_list_activity.class));
     }
 
+    public void companiesButton (View v){
+        startActivity(new Intent(user_homepage_activity.this, company_list_activity.class));
+    }
 
     public void logout_button(View v){
 

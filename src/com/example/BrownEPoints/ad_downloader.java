@@ -22,10 +22,9 @@ public class ad_downloader {
     }
 
 
-    public void run_image_downloader()
+    public void run_image_downloader( String adURL)
     {
-
-        new ImageDownloader().execute("http://static2.businessinsider.com/image/514b2c81eab8ea6956000002-534-793/star%20trek%20into%20darkness%20poster-1.png");
+        new ImageDownloader().execute(adURL);
     }
 
 

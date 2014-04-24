@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/brownepoints.iml" filepath="$PROJECT_DIR$/brownepoints.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BrownEPoints.iml" filepath="$PROJECT_DIR$/BrownEPoints.iml" />
     </modules>
   </component>
 </project>
