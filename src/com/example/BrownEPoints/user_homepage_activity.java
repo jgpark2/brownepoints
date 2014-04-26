@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class user_homepage_activity extends Activity implements View.OnClickListener {
 
-
     private static String search_word = "";
 
     /**
@@ -25,6 +24,7 @@ public class user_homepage_activity extends Activity implements View.OnClickList
         setContentView(R.layout.user_homepage);
 
         SearchView searchView = (SearchView) findViewById(R.id.user_search);
+
         int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
         TextView textView = (TextView) searchView.findViewById(id);
         textView.setTextColor(Color.BLACK);
@@ -63,39 +63,38 @@ public class user_homepage_activity extends Activity implements View.OnClickList
 
     public void search_user_database_button(View v) {
         SearchView search_result = (SearchView) findViewById(R.id.user_search);
-        final Context theContext = this;
-
         search_result.setSubmitButtonEnabled(true);
 
+        final Context theContext = this;
+
         search_result.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                                                 @Override
-                                                 public boolean onQueryTextChange(String newText) {
-                                                     // TODO Auto-generated method stub
-                                                     return false;
-                                                 }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // TODO Auto-generated method stub
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                search_word = query;
 
-                                                 @Override
-                                                 public boolean onQueryTextSubmit(String query) {
-                                                     search_word = query;
+                //if(search_word.equals("")){
+                //Toast.makeText(this, "Please input something to search", Toast.LENGTH_SHORT).show();
+                //    return false;
+                //}
 
-                                                     //if(search_word.equals("")){
-                                                     //Toast.makeText(this, "Please input something to search", Toast.LENGTH_SHORT).show();
-                                                     //    return false;
-                                                     //}
+                String sRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/user_table/search_user_list.php?username=" + search_word;
+                String output = Process_request.runProcess(sRequest);
 
-                                                     String sRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/user_table/search_user_list.php?username=" + search_word;
-                                                     String output = Process_request.runProcess(sRequest);
-
-                                                     if (output.equals("")) {
-                                                         Toast.makeText(theContext, "Couldn't find any matching username.", Toast.LENGTH_LONG).show();
-                                                         return false;
-                                                     } else {
-                                                         startActivity(new Intent(user_homepage_activity.this, user_list_activity.class));
-                                                         return true;
-                                                     }
-                                                 }
-                                             }
+                if (output.equals("")) {
+                    Toast.makeText(theContext, "Couldn't find any matching username.", Toast.LENGTH_LONG).show();
+                    return false;
+                } else {
+                    startActivity(new Intent(user_homepage_activity.this, user_list_activity.class));
+                    return true;
+                }
+            }
+        }
         );
 
     }
