@@ -36,6 +36,7 @@ public class company_info_activity extends Activity {
         AverageAdRatingTV.setText("GET FROM QUERY");
         GenderRatioTV.setText(genderRatio);
 
+        //does this work
     }
 
     public void view_ads_button(View v){
