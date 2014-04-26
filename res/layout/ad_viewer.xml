@@ -33,10 +33,9 @@
                  />
 
         <Button
-                android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Submit" android:onClick="companySubmit"/>
+                android:text="Submit" android:onClick="companySubmit" android:id="@+id/cbutton"/>
 
         <TextView
                 android:layout_width="wrap_content"
@@ -48,12 +47,12 @@
         <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/ad_ratingBar"/>
+                android:id="@+id/ad_ratingBar" android:numStars="5" android:stepSize="1.0"/>
         <Button
-                android:id="@+id/button"
+                android:id="@+id/abutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Submit" />
+                android:text="Submit" android:onClick="adSubmit"/>
 
 
     </LinearLayout>

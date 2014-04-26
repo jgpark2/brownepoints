@@ -49,6 +49,7 @@ public class ad_list_activity extends Activity{
             Log.d("after split 1", parts[0]);
             Log.d("after split 2", parts[1]);
             Log.d("after split 3", parts[2]);
+        Log.d("after split 4", parts[3]);
 
             for(int i = 0; i < parts.length; i++){
                 Log.d("Making into Advertisements", parts[i]);
@@ -57,7 +58,7 @@ public class ad_list_activity extends Activity{
                 for(int j = 0; j < ads.length; j++){
                     Log.d("second split", ads[j]);
                 }
-                Advertisements andy = new Advertisements( Integer.parseInt(ads[0]), Integer.parseInt(ads[1]), ads[2], ads[3]);
+                Advertisements andy = new Advertisements( Integer.parseInt(ads[0]), Integer.parseInt(ads[1]), ads[2], ads[3], Integer.parseInt(ads[4].trim()));
                 adList.add(andy);
                 Log.d("adding Advertisements", "Added" + andy.getAdId());
             }
@@ -79,6 +80,7 @@ public class ad_list_activity extends Activity{
                 Advertisements placehold = adList.get(position);
                 newIntent.putExtra("Advert", placehold.getAdId()); //SENDING AD ID TO THE NEW ACTIVITY
                 newIntent.putExtra("adURL", placehold.getDomain());
+                newIntent.putExtra("companyID",placehold.getCompanyID());
 
                 startActivity(newIntent);
 

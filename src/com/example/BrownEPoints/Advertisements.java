@@ -11,14 +11,16 @@ public class Advertisements {
     private int pointValue;
     private String Domain;
     private String companyName;
+    private int companyID;
 
-    public Advertisements(int adid, int ptValue, String website, String cmpName){
+    public Advertisements(int adid, int ptValue, String website, String cmpName, int cmpId){
 
-        Log.d("Function Call to constructor Successful ", "adid " + adid + "ptValue " + ptValue + "website " + website + "cmpname " + cmpName);
+        Log.d("Function Call to constructor Successful ", "adid " + adid + "ptValue " + ptValue + "website " + website + "cmpname " + cmpName +"cmpId " + cmpId);
         AdId = adid;
         pointValue = ptValue;
         Domain = website;
         companyName = cmpName;
+        companyID = cmpId;
     }
 
     public int getAdId() {
@@ -43,6 +45,14 @@ public class Advertisements {
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
+    }
+
+    public int getCompanyID() {
+        return companyID;
+    }
+
+    public void setCompanyName(int companyID) {
+        this.companyID = companyID;
     }
 
     public String getDomain() {
