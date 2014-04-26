@@ -37,6 +37,7 @@ public class company_info_activity extends Activity {
         GenderRatioTV.setText(genderRatio);
 
         //does this work
+        //branch working?
     }
 
     public void view_ads_button(View v){
