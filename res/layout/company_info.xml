@@ -22,14 +22,22 @@
                       android:layout_weight="0.04">
                 <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
                           android:textAppearance="?android:attr/textAppearanceLarge" android:text="Average Company Rating: "
-                          android:id="@+id/AverageCompanyRating" android:layout_weight="0.31" android:textColor="#000000"
+                          android:id="@+id/AverageCompanyRating" android:textColor="#000000"
                           android:textAlignment="center"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/average_company_rating_input" android:textColor="#000000"/>
 
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="1">
                 <TextView android:layout_width="wrap_content" android:layout_height="37dp"
                           android:textAppearance="?android:attr/textAppearanceLarge" android:text="Average Ad Rating: "
                           android:id="@+id/AverageAdRating" android:textColor="#000000"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceLarge"
+                          android:id="@+id/average_ad_rating_input" android:textColor="#000000"/>
 
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="1"
@@ -37,6 +45,9 @@
                 <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
                           android:textAppearance="?android:attr/textAppearanceLarge" android:text="Average Age: "
                           android:id="@+id/AverageAge" android:layout_weight="0.03" android:textColor="#000000"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceLarge"
+                          android:id="@+id/average_age_input" android:layout_weight="0.03" android:textColor="#000000"/>
 
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -44,6 +55,9 @@
                 <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
                           android:textAppearance="?android:attr/textAppearanceLarge" android:text="Gender Ratio: "
                           android:id="@+id/GenderRatio" android:textColor="#000000"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceLarge"
+                          android:id="@+id/gender_ratio_input" android:textColor="#000000"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:layout_weight="0.04">

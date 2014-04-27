@@ -20,21 +20,21 @@ public class company_info_activity extends Activity {
         int companyId = currIntent.getIntExtra("Advert", -5);
 
         //We will most likely use multiple SQL statements here
-        String genderRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_gender_ratio.php";
+        String genderRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_gender_ratio.php?CompanyID="+companyId;
         String genderRatio = Process_request.runProcess(genderRequest);
 
-        String allAdsRequest = "SQL STATEMENT THAT RETURNS ALL THE SHIT WE NEED TO KNOW FOR THIS INFO";
-        String outputAllAds = Process_request.runProcess(allAdsRequest);
+        String average_age_request = "https://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_average_user_age_of_company.php?CompanyID="+companyId;
+        String age_request_output = Process_request.runProcess(average_age_request);
 
-        TextView AverageAgeTV = (TextView)findViewById(R.id.AverageAge);
-        TextView AverageCompanyRatingTV = (TextView)findViewById(R.id.AverageCompanyRating);
-        TextView GenderRatioTV = (TextView)findViewById(R.id.GenderRatio);
-        TextView AverageAdRatingTV = (TextView)findViewById(R.id.AverageAdRating);
+        TextView AverageAgeTV = (TextView)findViewById(R.id.average_age_input);
+        TextView AverageCompanyRatingTV = (TextView)findViewById(R.id.average_company_rating_input);
+        TextView GenderRatioTV = (TextView)findViewById(R.id.gender_ratio_input);
+        TextView AverageAdRatingTV = (TextView)findViewById(R.id.average_ad_rating_input);
 
-        AverageAgeTV.setText("GET FROM QUERY");
-        AverageCompanyRatingTV.setText("GET FROM QUERY");
-        AverageAdRatingTV.setText("GET FROM QUERY");
-        GenderRatioTV.setText(genderRatio);
+        AverageAgeTV.setText(age_request_output);//company_table/get_average_user_age_of_company.php
+        AverageCompanyRatingTV.setText("GET FROM QUERY");//
+        AverageAdRatingTV.setText("GET FROM QUERY");//
+        GenderRatioTV.setText(genderRatio);//company_table/get_gender_ratio
 
         //does this work
         //branch working?
