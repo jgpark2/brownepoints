@@ -23,7 +23,7 @@ public class company_list_activity extends Activity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ad_list);
+        setContentView(R.layout.company_list);
         String allAdsRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_companies_info.php";
         String outputAllCompanies = Process_request.runProcess(allAdsRequest);
 
@@ -42,7 +42,7 @@ public class company_list_activity extends Activity {
             Log.d("adding Company", "Added" + comp.getCompanyID());
         }
 
-        ListView companyView = (ListView) findViewById(R.id.adListview);
+        ListView companyView = (ListView) findViewById(R.id.companyListview);
         companyArrayAdapter adapted = new companyArrayAdapter(companyView.getContext(), compList.toArray(new CompanyWithNumberAds[0]));
         companyView.setAdapter(adapted);
 

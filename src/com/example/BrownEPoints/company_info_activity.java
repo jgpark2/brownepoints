@@ -3,6 +3,7 @@ package com.example.BrownEPoints;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class company_info_activity extends Activity {
 
         Intent currIntent = getIntent();
         int companyId = currIntent.getIntExtra("Advert", -5);
+        Log.d("Company ID was:", new Integer(companyId).toString());
 
         //We will most likely use multiple SQL statements here
         String genderRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_gender_ratio.php";

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,16 +37,27 @@ public class ad_list_activity extends Activity{
             outputAllAds = Process_request.runProcess(allAdsRequest);
 
         }
-
         else{
 
+            String email = currentIntent.getStringExtra("Email");
+            Log.d("email was: ", email);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.ad_list);
+            String allAdsRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/ad_table/get_unrated_ads.php?email="+email;
+            outputAllAds = Process_request.runProcess(allAdsRequest);
+            /*
             super.onCreate(savedInstanceState);
             setContentView(R.layout.ad_list);
             String allAdsRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/ad_table/get_all_ads.php?";
-            outputAllAds = Process_request.runProcess(allAdsRequest);
+            outputAllAds = Process_request.runProcess(allAdsRequest);*/
         }
             Log.d("sql test wiener", outputAllAds);
             String[] parts = outputAllAds.split("∞");
+            if (parts.length<4) {
+                Toast.makeText(this, "No new ads available.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             Log.d("after split 1", parts[0]);
             Log.d("after split 2", parts[1]);
             Log.d("after split 3", parts[2]);
