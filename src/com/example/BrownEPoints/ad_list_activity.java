@@ -32,7 +32,7 @@ public class ad_list_activity extends Activity{
             int companyID = currentIntent.getIntExtra("CompanyID", -5);
             super.onCreate(savedInstanceState);
             setContentView(R.layout.ad_list);
-            String allAdsRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_sorted_ads_list.php";
+            String allAdsRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_sorted_ads_list.php?CompanyID="+companyID;
             outputAllAds = Process_request.runProcess(allAdsRequest);
 
         }
@@ -44,11 +44,11 @@ public class ad_list_activity extends Activity{
             String allAdsRequest = "http://web.engr.illinois.edu/~null_ptrs/bpoints/ad_table/get_all_ads.php?";
             outputAllAds = Process_request.runProcess(allAdsRequest);
         }
-            Log.d("sql test wiener", outputAllAds);
+//            Log.d("sql test wiener", outputAllAds);
             String[] parts = outputAllAds.split("∞");
-            Log.d("after split 1", parts[0]);
-            Log.d("after split 2", parts[1]);
-            Log.d("after split 3", parts[2]);
+//            Log.d("after split 1", parts[0]);
+//            Log.d("after split 2", parts[1]);
+//            Log.d("after split 3", parts[2]);
 
             for(int i = 0; i < parts.length; i++){
                 Log.d("Making into Advertisements", parts[i]);
