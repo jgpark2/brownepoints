@@ -49,7 +49,7 @@ public class ad_list_activity extends Activity{
             Log.d("after split 1", parts[0]);
             Log.d("after split 2", parts[1]);
             Log.d("after split 3", parts[2]);
-        Log.d("after split 4", parts[3]);
+            Log.d("after split 4", parts[3]);
 
             for(int i = 0; i < parts.length; i++){
                 Log.d("Making into Advertisements", parts[i]);
