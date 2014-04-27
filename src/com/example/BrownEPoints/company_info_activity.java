@@ -26,14 +26,21 @@ public class company_info_activity extends Activity {
         String average_age_request = "https://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_average_user_age_of_company.php?CompanyID="+companyId;
         String age_request_output = Process_request.runProcess(average_age_request);
 
+        String average_ad_rating = "https://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_average_ad_rating.php?CompanyID="+companyId;
+        String ad_rating= Process_request.runProcess(average_ad_rating);
+
+        String average_company_rating = "https://web.engr.illinois.edu/~null_ptrs/bpoints/company_table/get_company_average.php?CompanyID="+companyId;
+        String company_rating = Process_request.runProcess(average_company_rating);
+
+
         TextView AverageAgeTV = (TextView)findViewById(R.id.average_age_input);
         TextView AverageCompanyRatingTV = (TextView)findViewById(R.id.average_company_rating_input);
         TextView GenderRatioTV = (TextView)findViewById(R.id.gender_ratio_input);
         TextView AverageAdRatingTV = (TextView)findViewById(R.id.average_ad_rating_input);
 
         AverageAgeTV.setText(age_request_output);//company_table/get_average_user_age_of_company.php
-        AverageCompanyRatingTV.setText("GET FROM QUERY");//
-        AverageAdRatingTV.setText("GET FROM QUERY");//
+        AverageCompanyRatingTV.setText(company_rating);//company_table/get_company_average.php
+        AverageAdRatingTV.setText(ad_rating);//company_table/get_average_ad_rating.php
         GenderRatioTV.setText(genderRatio);//company_table/get_gender_ratio
 
         //does this work
