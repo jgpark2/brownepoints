@@ -34,6 +34,8 @@ public class user_info_activity extends Activity implements View.OnClickListener
         EditText user_ethnicity = (EditText)findViewById(R.id.user_info_ethnicity);
         RadioButton user_male = (RadioButton)findViewById(R.id.user_info_male);
         RadioButton user_female = (RadioButton)findViewById(R.id.user_info_female);
+        EditText user_credibility = (EditText)findViewById(R.id.user_info_credibility);
+        EditText user_points = (EditText)findViewById(R.id.user_info_points);
 
 
 
@@ -89,7 +91,8 @@ public class user_info_activity extends Activity implements View.OnClickListener
         {
             user_female.toggle();
         }
-
+        user_credibility.setText(user_info.get("Credibility"));
+        user_points.setText(user_info.get("Points"));
 
        // editText.setText("Google is your friend.", TextView.BufferType.EDITABLE);
 

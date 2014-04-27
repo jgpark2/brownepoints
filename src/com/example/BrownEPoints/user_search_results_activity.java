@@ -24,6 +24,7 @@ public class user_search_results_activity extends Activity implements View.OnCli
 
         TextView user_name = (TextView)findViewById(R.id.search_user_info_username);
         TextView user_credibility = (TextView)findViewById(R.id.search_user_info_credibility);
+        TextView user_points = (TextView)findViewById(R.id.search_user_info_points);
         TextView user_age = (TextView)findViewById(R.id.search_user_info_age);
         TextView user_country = (TextView)findViewById(R.id.search_user_info_country);
         TextView user_state = (TextView)findViewById(R.id.search_user_info_state);
@@ -65,6 +66,7 @@ public class user_search_results_activity extends Activity implements View.OnCli
 
         user_name.setText(search_user_info.get("Username"));
         user_credibility.setText(search_user_info.get("Credibility"));
+        user_points.setText(search_user_info.get("Points"));
         user_age.setText(search_user_info.get("Age"));
         user_country.setText(search_user_info.get("Country"));
         user_state.setText(search_user_info.get("State"));
