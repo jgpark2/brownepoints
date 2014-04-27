@@ -53,16 +53,16 @@ public class ad_list_activity extends Activity{
         }
 //            Log.d("sql test wiener", outputAllAds);
             String[] parts = outputAllAds.split("∞");
-            if (parts.length<4) {
+            if (parts.length<2) {
                 Toast.makeText(this, "No new ads available.", Toast.LENGTH_SHORT).show();
                 return;
             }
-
+/*
             Log.d("after split 1", parts[0]);
             Log.d("after split 2", parts[1]);
             Log.d("after split 3", parts[2]);
             Log.d("after split 4", parts[3]);
-
+*/
 
             for(int i = 0; i < parts.length; i++){
                 Log.d("Making into Advertisements", parts[i]);
