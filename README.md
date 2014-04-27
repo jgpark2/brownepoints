@@ -83,7 +83,7 @@ git will try to auto-merge, but there's likely to be conflicts.
 Open up files that have merge conflicts, and manually modify them.
 Be extra careful (esp. of another person's code) when resolving merge conflicts! Make sure it still compiles without any bugs...
 
-Once you've resolved the merge conflicts, commit the changes (add, commit, push origin master).
+Once you've resolved the merge conflicts, and you've confirmed it works, push it (git push origin master). The merge proccess automatically adds changed files and commits it, which is why you don't need to do them again.
 
 Unless you want to continue developing past your finished feature on the branch (which I don't recommend if you truly finished the feature), delete the branch since we don't need it anymore.
 >git branch -d [branch-name]
